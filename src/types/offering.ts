@@ -60,7 +60,7 @@ export interface Offering {
   roomsCount: number;
   guestsCount: number;
   price: number;
-  conveniences: Convenience;
+  conveniences: Convenience | Convenience[];
   author: User;
   readonly commentsCount: number;
   location: Coordinates;
