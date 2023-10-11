@@ -32,6 +32,6 @@ export interface Offering {
   guestsCount: number;
   price: number;
   conveniences: Convenience[];
-  author: User;
   location: Coordinates;
+  author: User;
 }
