@@ -21,9 +21,9 @@ export type Coordinates = {
 export interface Offering {
   name: string;
   description: string;
-  publishDate: string;
+  postDate: string;
   previewImgLink: string;
-  photo: string[]
+  photos: string[]
   isPremium: boolean;
   isFavorite: boolean;
   rating: number;
@@ -31,8 +31,7 @@ export interface Offering {
   roomsCount: number;
   guestsCount: number;
   price: number;
-  conveniences: Convenience | Convenience[];
+  conveniences: Convenience[];
   author: User;
-  readonly commentsCount: number;
   location: Coordinates;
 }
