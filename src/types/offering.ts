@@ -21,7 +21,7 @@ export type Coordinates = {
 export interface Offering {
   name: string;
   description: string;
-  postDate: string;
+  postDate: Date;
   previewImgLink: string;
   photos: string[]
   isPremium: boolean;

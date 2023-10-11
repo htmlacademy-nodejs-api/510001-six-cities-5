@@ -37,11 +37,16 @@ export class TSVFileReader implements FileReader {
           guestsCount,
           price,
           conveniences,
-          author,
-          location,
+          firstname,
+          lastname,
+          avatarPath,
+          email,
+          lat,
+          long,
         ]
       ) => ({
         name,
+        description: '',
         postDate: new Date(postDate),
         previewImgLink,
         photos: parseArr(photos),
@@ -53,7 +58,8 @@ export class TSVFileReader implements FileReader {
         guestsCount: parseInt(guestsCount, 10),
         price: Number.parseInt(price, 10),
         conveniences: parseArr(conveniences) as Convenience[],
-        user: {email, firstname, lastname, avatarPath},
+        author: {email, firstname, lastname, avatarPath},
+        location: {lat: parseFloat(lat), long: parseFloat(long)}
       }));
   }
 }
