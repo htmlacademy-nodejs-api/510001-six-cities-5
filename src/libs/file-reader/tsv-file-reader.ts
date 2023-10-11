@@ -1,6 +1,7 @@
-import {FileReader} from './types.js';
+import {FileReader} from './types';
 import {readFileSync} from 'node:fs';
 import {AccommodationType, Convenience, Offering} from "@/types/offering";
+import {parseArr, parseBool} from "./utils";
 
 export class TSVFileReader implements FileReader {
   private rawData = '';
@@ -23,6 +24,7 @@ export class TSVFileReader implements FileReader {
       .split('\n')
       .filter((row) => row.trim().length > 0)
       .map((line) => line.split('\t'))
+      .map(x => x)
       .map((
         [
           name,
@@ -65,5 +67,3 @@ export class TSVFileReader implements FileReader {
 }
 
 
-export const parseArr = (str: string): string[] => str.split(';');
-export const parseBool = (str: string): boolean => str === 'true';

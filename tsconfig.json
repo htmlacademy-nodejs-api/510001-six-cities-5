@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "node",
+    "module": "CommonJS",
+    "moduleResolution": "classic",
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
@@ -30,7 +30,8 @@
     "paths": {
       "@*": [
         "src/*"
-      ]
+      ],
+      "tslib" : ["node_modules/tslib/tslib.d.ts"]
     }
   },
   "include": [

@@ -1,5 +1,5 @@
-import { Command } from './types.js';
-import { TSVFileReader } from '../../libs/file-reader/index.js';
+import { Command } from './types';
+import { TSVFileReader } from '../../libs/file-reader/index';
 
 export class ImportCommand implements Command {
   public getName(): string {
