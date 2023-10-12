@@ -1,15 +1,15 @@
 import {Command} from './types.js';
-import {Chalk} from 'chalk'
+import {Chalk} from 'chalk';
 
-const chalk = new Chalk()
+const chalk = new Chalk();
 
 export class HelpCommand implements Command {
-    public getName(): string {
-        return '--help';
-    }
+  public getName(): string {
+    return '--help';
+  }
 
-    public async execute(..._parameters: string[]): Promise<void> {
-        console.info(`
+  public async execute(..._parameters: string[]): Promise<void> {
+    console.info(`
         ${chalk.bold('Программа для подготовки данных для REST API сервера.')}
         ${chalk.red('Пример:')}
             cli.js --<command> [--arguments]
@@ -18,5 +18,5 @@ export class HelpCommand implements Command {
             --help:                      ${chalk.cyan('# печатает этот текст')}
             --import <path>:             ${chalk.cyan('# импортирует данные из TSV')}
     `);
-    }
+  }
 }
