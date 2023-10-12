@@ -1,4 +1,5 @@
-import { Command } from './types';
+import {Command} from './types.js';
+// import {Chalk} from 'chalk'
 
 export class HelpCommand implements Command {
   public getName(): string {

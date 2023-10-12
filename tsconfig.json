@@ -2,8 +2,8 @@
   "compilerOptions": {
     "baseUrl": "./",
     "target": "ES2022",
-    "module": "CommonJS",
-    "moduleResolution": "classic",
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
@@ -21,22 +21,13 @@
     "sourceMap": true,
     "outDir": "./dist",
     "emitDecoratorMetadata": true,
-    "types": [
-      "node"
-    ],
-    "lib": [
-      "ESNext"
-    ],
+    "types": ["node"],
+    "lib": ["ESNext"],
     "paths": {
-      "@*": [
-        "src/*"
-      ],
-      "tslib" : ["node_modules/tslib/tslib.d.ts"]
+      "tslib": ["node_modules/tslib/tslib.d.ts"],
     }
   },
-  "include": [
-    "src/**/*.ts"
-  ],
+  "include": ["src/**/*.ts"],
   "exclude": [
     "node_modules",
     "**/*.test.ts"
