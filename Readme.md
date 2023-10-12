@@ -1,7 +1,7 @@
 # Личный проект «Шесть городов»
 
 * Студент: [Андрей Фирсов](https://up.htmlacademy.ru/nodejs-api/5/user/510001).
-* Наставник: [Вячеслав Мельников](https://htmlacademy.ru/profile/id2309245).
+* Наставник: [Константин Ильин](https://htmlacademy.ru/profile/id2374827).
 
 ---
 
