@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import {CLIApplication, HelpCommand, ImportCommand, VersionCommand} from './cli/index.js';
+import 'module-alias/register.js'; // 👈 add this one
+import {CLIApplication, HelpCommand, ImportCommand, VersionCommand} from '@/cli/index.js';
 
 function bootstrap() {
   const cliApplication = new CLIApplication();

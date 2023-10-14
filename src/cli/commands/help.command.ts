@@ -1,7 +1,6 @@
 import {Command} from './command.interface.js';
-import {Chalk} from 'chalk';
+import chalk from 'chalk';
 
-const chalk = new Chalk();
 
 export class HelpCommand implements Command {
   public getName(): string {

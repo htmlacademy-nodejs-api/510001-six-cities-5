@@ -2,8 +2,7 @@
   "compilerOptions": {
     "baseUrl": "./",
     "target": "ES2022",
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
+    "module": "CommonJS",
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
@@ -21,18 +20,34 @@
     "sourceMap": true,
     "outDir": "./dist",
     "emitDecoratorMetadata": true,
-    "types": ["node"],
-    "lib": ["ESNext"],
+    "types": [
+      "node"
+    ],
+    "lib": [
+      "ESNext"
+    ],
     "paths": {
-      "tslib": ["node_modules/tslib/tslib.d.ts"],
+      "tslib": [
+        "node_modules/tslib/tslib.d.ts"
+      ],
+      "@/*": [
+        "src/*"
+      ]
     }
   },
-  "include": ["src/**/*.ts"],
+  "include": [
+    "src/**/*.ts"
+  ],
   "exclude": [
     "node_modules",
     "**/*.test.ts"
   ],
   "ts-node": {
-    "esm": true
+    "esm": true,
+    "ts-node": {
+      "require": [
+        "tsconfig-paths/register"
+      ]
+    }
   }
 }
