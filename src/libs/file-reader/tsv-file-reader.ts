@@ -1,13 +1,16 @@
 import {FileReader} from './filereader.interface.js';
 import {readFileSync} from 'node:fs';
-import {AccommodationType, Convenience, Offering} from '../../types/offering.js';
+import {Offering} from '@/types/offering.interface';
 import {parseArr, parseBool} from './utils.js';
+import {Convenience} from '@/types/convenience.enum';
+import {AccommodationType} from '@/types/accommodationtype.enum';
+import {UserType} from '@/types/usertype.enum';
 
 export class TSVFileReader implements FileReader {
   private rawData = '';
 
   constructor(
-        private readonly filename: string
+    private readonly filename: string
   ) {
   }
 
@@ -39,9 +42,9 @@ export class TSVFileReader implements FileReader {
           price,
           conveniences,
           firstname,
-          lastname,
           avatarPath,
           email,
+          userType,
           lat,
           long,
         ]
@@ -59,7 +62,7 @@ export class TSVFileReader implements FileReader {
         guestsCount: parseInt(guestsCount, 10),
         price: Number.parseInt(price, 10),
         conveniences: parseArr(conveniences) as Convenience[],
-        author: {email, firstname, lastname, avatarPath},
+        author: {email, firstname, type: userType as UserType, avatarPath},
         location: {lat: parseFloat(lat), long: parseFloat(long)}
       }));
   }

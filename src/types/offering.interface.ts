@@ -1,22 +1,7 @@
-import {User} from './user.js';
-
-export type AccommodationType = 'apartment'
-  | 'house'
-  | 'room'
-  | 'hotel';
-
-export type Convenience = 'Breakfast'
-  | 'Air conditioning'
-  | 'Laptop friendly workspace'
-  | 'Baby seat'
-  | 'Washer'
-  | 'Towels'
-  | 'Fridge'
-
-export type Coordinates = {
-  lat: number;
-  long: number;
-}
+import {User} from './user.interface';
+import {Coordinates} from '@/types/coordinates.interface';
+import {Convenience} from '@/types/convenience.enum';
+import {AccommodationType} from '@/types/accommodationtype.enum';
 
 export interface Offering {
   name: string;
