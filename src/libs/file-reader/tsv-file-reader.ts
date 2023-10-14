@@ -1,4 +1,4 @@
-import {FileReader} from './types.js';
+import {FileReader} from './filereader.interface.js';
 import {readFileSync} from 'node:fs';
 import {AccommodationType, Convenience, Offering} from '../../types/offering.js';
 import {parseArr, parseBool} from './utils.js';
@@ -24,7 +24,6 @@ export class TSVFileReader implements FileReader {
       .split('\n')
       .filter((row) => row.trim().length > 0)
       .map((line) => line.split('\t'))
-      .map((x) => x)
       .map((
         [
           name,

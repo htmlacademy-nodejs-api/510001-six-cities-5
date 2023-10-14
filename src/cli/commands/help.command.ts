@@ -1,4 +1,4 @@
-import {Command} from './types.js';
+import {Command} from './command.interface.js';
 import {Chalk} from 'chalk';
 
 const chalk = new Chalk();
@@ -14,9 +14,9 @@ export class HelpCommand implements Command {
         ${chalk.red('Пример:')}
             cli.js --<command> [--arguments]
         ${chalk.red('Команды:')}
-            --version:                   ${chalk.cyan('# выводит номер версии')}
-            --help:                      ${chalk.cyan('# печатает этот текст')}
-            --import <path>:             ${chalk.cyan('# импортирует данные из TSV')}
+            --version:                   ${chalk.cyan('# выводит номер версии приложения')}
+            --help:                      ${chalk.cyan('# печатает текст помощи')}
+            --import <path>:             ${chalk.cyan('# импортирует данные из файла <path> с раширением .tsv')}
     `);
   }
 }

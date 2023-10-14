@@ -1,4 +1,4 @@
-import {Command} from './types.js';
+import {Command} from './command.interface.js';
 import {TSVFileReader} from '../../libs/file-reader/index.js';
 
 export class ImportCommand implements Command {
@@ -8,11 +8,14 @@ export class ImportCommand implements Command {
 
   public execute(...parameters: string[]): void {
     const [filename] = parameters;
+    if (!filename) {
+      return;
+    }
+
     const fileReader = new TSVFileReader(filename.trim());
 
     try {
       fileReader.read();
-      console.log(fileReader.toArray());
     } catch (err) {
 
       if (!(err instanceof Error)) {
