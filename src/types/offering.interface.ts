@@ -4,7 +4,7 @@ import {Convenience} from '@/types/convenience.enum';
 import {AccommodationType} from '@/types/accommodationtype.enum';
 
 export interface Offering {
-  name: string;
+  title: string;
   description: string;
   postDate: Date;
   previewImgLink: string;

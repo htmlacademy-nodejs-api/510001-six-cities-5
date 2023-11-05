@@ -6,6 +6,7 @@
 /docs/
 .idea/*
 mocks/
+!mocks/mocks.ts
 
 .DS_Store
 coverage

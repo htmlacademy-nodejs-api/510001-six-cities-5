@@ -49,7 +49,7 @@ export class TSVFileReader implements FileReader {
           long,
         ]
       ) => ({
-        name,
+        title: name,
         description: '',
         postDate: new Date(postDate),
         previewImgLink,
