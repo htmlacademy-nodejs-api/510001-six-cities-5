@@ -13,7 +13,8 @@ export function getErrorMessage(error: unknown): string {
 
 export const createOffering = (tsvLine: string): Offering => {
   const [
-    name,
+    title,
+    description,
     postDate,
     previewImgLink,
     photos,
@@ -25,17 +26,18 @@ export const createOffering = (tsvLine: string): Offering => {
     guestsCount,
     price,
     conveniences,
-    firstname,
-    avatarPath,
-    email,
-    userType,
     lat,
     long,
+    firstname,
+    lastname,
+    email,
+    avatarPath,
+    userType,
   ] = tsvLine.split('\t');
 
   return {
-    title: name,
-    description: '',
+    title,
+    description,
     postDate: new Date(postDate),
     previewImgLink,
     photos: parseArr(photos),
@@ -47,7 +49,7 @@ export const createOffering = (tsvLine: string): Offering => {
     guestsCount: parseInt(guestsCount, 10),
     price: Number.parseInt(price, 10),
     conveniences: parseArr(conveniences) as Convenience[],
-    author: {email, firstname, type: userType as UserType, avatarPath},
+    author: {email, firstname, lastname, type: userType as UserType, avatarPath},
     location: {lat: parseFloat(lat), long: parseFloat(long)}
   };
 };

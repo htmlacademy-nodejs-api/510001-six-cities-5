@@ -12,11 +12,11 @@ import {
 } from '@/helpers/mocks';
 import {getRandomBool} from '@/helpers/common';
 import {stringifyArr} from '@/libs/file-reader/utils';
+import {UserType} from '@/types/usertype.enum';
 
 
 export class TSVOfferGenerator implements OfferGenerator {
   public generate(): string {
-    const title = faker.helpers.arrayElement(OPTIONS_GETTERS);
     const description = faker.commerce.productDescription();
     const postDate = faker.date.past({refDate: new Date()}).toISOString();
     const previewImgLink = `${PREVIEW_IMG_PREFIX}${faker.number.int({min: 1, max: MAX_PREVIEW_IMG_IND})}.jpg`;
@@ -28,14 +28,15 @@ export class TSVOfferGenerator implements OfferGenerator {
     const rating = String(faker.number.int({min: 1, max: 5}));
     const getOption = faker.helpers.arrayElement(OPTIONS_GETTERS);
     const {
-      type, roomsCount, guestsCount, price, conveniences,
+      title, type, roomsCount, guestsCount, price, conveniences,
     } = getOption();
-    const location: string = JSON.stringify(faker.helpers.arrayElement(AVAILABLE_LOCATIONS));
+    const {lat, long} = faker.helpers.arrayElement(AVAILABLE_LOCATIONS);
     const firstname = faker.person.firstName();
     const lastname = faker.person.lastName();
     const email = faker.internet.email();
     const avatar = `${AVATAR_IMG_PREFIX}${faker.number.int({min: 1, max: MAX_AVATAR_IND})}.jpg`;
+    const userType = getRandomBool() ? UserType.Pro : UserType.Regular;
 
-    return [title, description, postDate, previewImgLink, photos, type, isPremium, isFavorite, rating, price, roomsCount, guestsCount, stringifyArr(conveniences), location, firstname, lastname, email, avatar].join('\t');
+    return [title, description, postDate, previewImgLink, photos, isPremium, isFavorite, rating, type, roomsCount, guestsCount, price, stringifyArr(conveniences), lat, long, firstname, lastname, email, avatar, userType].join('\t');
   }
 }
