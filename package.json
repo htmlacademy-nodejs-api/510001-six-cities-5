@@ -43,8 +43,6 @@
   },
   "_moduleAliases": {
     "@": "dist",
-    "@mocks": [
-      "mocks"
-    ]
+    "@mocks": "mocks"
   }
 }

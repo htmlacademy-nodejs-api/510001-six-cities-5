@@ -9,7 +9,7 @@ import {
   OPTIONS_GETTERS,
   PHOTO_IMG_PREFIX,
   PREVIEW_IMG_PREFIX
-} from '@mocks/mocks';
+} from '@/helpers/mocks';
 import {getRandomBool} from '@/helpers/common';
 import {stringifyArr} from '@/libs/file-reader/utils';
 
