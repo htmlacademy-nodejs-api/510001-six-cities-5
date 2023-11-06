@@ -1,9 +1,9 @@
-export enum Convenience {
-  Breakfast = 'Breakfast',
-  AirConditioning = 'Air conditioning',
-  LaptopFriendly = 'Laptop friendly workspace',
-  BabySeat = 'Baby seat',
-  Washer = 'Washer',
-  Towels = 'Towels',
-  Fridge = 'Fridge',
-}
+export const Convenience = {
+  Breakfast: 'Breakfast',
+  AirConditioning: 'Air conditioning',
+  LaptopFriendly: 'Laptop friendly workspace',
+  BabySeat: 'Baby seat',
+  Washer: 'Washer',
+  Towels: 'Towels',
+  Fridge: 'Fridge',
+} as const;
