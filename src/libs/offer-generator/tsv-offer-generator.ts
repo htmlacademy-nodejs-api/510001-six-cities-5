@@ -45,22 +45,3 @@ export class TSVOfferGenerator implements OfferGenerator {
     ].join('\t');
   }
 }
-
-
-export interface Offering {
-  title: string;
-  description: string;
-  postDate: Date;
-  previewImgLink: string;
-  photos: string[]
-  isPremium: boolean;
-  isFavorite: boolean;
-  rating: number;
-  type: AccommodationType;
-  roomsCount: number;
-  guestsCount: number;
-  price: number;
-  conveniences: Convenience[];
-  location: Coordinates;
-  author: User;
-}
