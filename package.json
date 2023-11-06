@@ -36,10 +36,13 @@
     "npm": ">=8"
   },
   "dependencies": {
+    "@faker-js/faker": "^8.2.0",
     "chalk": "4.1.2",
+    "dayjs": "^1.11.10",
     "module-alias": "^2.2.3"
   },
   "_moduleAliases": {
-    "@": "dist"
+    "@": "dist",
+    "@mocks": "mocks"
   }
 }
