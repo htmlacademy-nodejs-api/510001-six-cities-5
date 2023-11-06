@@ -1,6 +1,6 @@
-export const AccommodationType = {
-  Apartment: 'apartment',
-  House: 'house',
-  Room: 'room',
-  Hotel: 'hotel'
-} as const;
+export enum AccommodationType {
+  apartment = 'apartment',
+  house = 'house',
+  room = 'room',
+  hotel = 'hotel'
+}

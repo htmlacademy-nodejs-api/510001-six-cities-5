@@ -4,5 +4,5 @@ export interface User {
   firstname: string;
   avatarPath: string;
   email: string;
-  type: UserType;
+  type: keyof typeof UserType;
 }
